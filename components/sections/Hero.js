@@ -29,7 +29,7 @@ export default function Hero() {
   };
 
   const interestIcons = [
-    <Globe key="domain" className="h-8 w-8 text-blue-500" />,
+    // <Globe key="domain" className="h-8 w-8 text-blue-500" />,
     <Database key="data" className="h-8 w-8 text-green-500" />,
     <Code key="software" className="h-8 w-8 text-purple-500" />
   ];
