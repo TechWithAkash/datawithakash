@@ -51,7 +51,7 @@ export default function About() {
           <div className="max-w-4xl mx-auto text-center mb-16">
             <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
               As a dedicated Data Science Enthusiast pursuing a Computer Engineering degree, 
-              I'm committed to pushing the boundaries of technological innovation. My expertise 
+              I&apos;m committed to pushing the boundaries of technological innovation. My expertise 
               spans data science, software development, and embedded systems, leveraging 
               advanced technologies to solve complex challenges.
             </p>

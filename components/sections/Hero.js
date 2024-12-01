@@ -70,7 +70,7 @@ export default function Hero() {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-            Hi, I'm Akash Vishwakarma
+            Hi, I&apos;m Akash Vishwakarma
           </h1>
 
           <div className="flex items-center justify-center mb-4 space-x-2">
