@@ -34,10 +34,10 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-white via-blue-50 to-purple-50 relative">
+    <section id="about" className="py-10 bg-gradient-to-br from-white via-blue-50 to-purple-50 relative">
       <div className="absolute inset-0 opacity-10 bg-pattern"></div>
       
-      <div className="container px-4 mx-auto relative z-10">
+      <div className="container px-4 md:px-36 mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
             {professionalSkills.map(({ icon: Icon, title, description, iconColor }, index) => (
               <Card 
                 key={title} 

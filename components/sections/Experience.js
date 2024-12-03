@@ -105,8 +105,8 @@ const ExperienceCard = ({ experience, index }) => {
 
 export default function Experience() {
   return (
-    <div className="container mx-auto px-4 py-8 bg-blue-50">
-      <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
+    <div className="container mx-auto px-4 md:px-16 py-8 bg-blue-50">
+      <h2 className="text-4xl font-bold text-center mb-10 text-gray-800">
         Achievements & Education
       </h2>
 

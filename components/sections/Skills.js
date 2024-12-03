@@ -110,7 +110,7 @@ export default function Skills() {
   return (
     <section 
       id="skills" 
-      className="py-20 bg-gradient-to-br from-white via-blue-50 to-purple-50 relative overflow-hidden"
+      className="py-10 bg-gradient-to-br from-white via-blue-50 to-purple-50 relative overflow-hidden"
     >
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-10 bg-pattern pointer-events-none"></div>
@@ -122,13 +122,12 @@ export default function Skills() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-800 
-            bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+          <h2 className="text-4xl font-bold text-center mb-10 text-gray-800">
             Technical Expertise & Skill Landscape
           </h2>
 
           {/* Responsive Grid with Hover Effects */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-1  px-4 md:px-36 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {categoryDetails.map((category, index) => (
               <motion.div
                 key={index}

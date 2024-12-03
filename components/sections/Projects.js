@@ -65,10 +65,10 @@ export default function Projects() {
     : projects;
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-white via-blue-50 to-purple-50 relative">
+    <section id="projects" className="py-6 bg-gradient-to-br from-white via-blue-50 to-purple-50 relative">
       <div className="absolute inset-0 opacity-10 bg-pattern"></div>
       
-      <div className="container px-4 mx-auto relative z-10">
+      <div className="container px-4  md:px-36  mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
