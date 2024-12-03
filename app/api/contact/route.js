@@ -1,72 +1,3 @@
-// import { NextResponse } from 'next/server';
-// import nodemailer from 'nodemailer';
-
-// export async function POST(request) {
-//   try {
-//     // Parse the request body
-//     const body = await request.json();
-
-//     // Destructure form data
-//     const { firstName, lastName, email, message } = body;
-
-//     // Validate input
-//     if (!firstName || !lastName || !email || !message) {
-//       return NextResponse.json(
-//         { message: 'All fields are required' }, 
-//         { status: 400 }
-//       );
-//     }
-
-//     // Create a Nodemailer transporter
-//     const transporter = nodemailer.createTransport({
-//       host: process.env.EMAIL_HOST,
-//       port: Number(process.env.EMAIL_PORT),
-//       secure: false, // Use TLS
-//       auth: {
-//         user: process.env.EMAIL_USER,
-//         pass: process.env.EMAIL_PASS
-//       }
-//     });
-
-//     // Send email
-//     await transporter.sendMail({
-//       from: process.env.EMAIL_USER,
-//       to: process.env.EMAIL_USER,
-//       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
-//       text: `
-//         Name: ${firstName} ${lastName}
-//         Email: ${email}
-//         Message: ${message}
-//       `,
-//       html: `
-//         <h3>New Contact Form Submission</h3>
-//         <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-//         <p><strong>Email:</strong> ${email}</p>
-//         <p><strong>Message:</strong></p>
-//         <p>${message}</p>
-//       `
-//     });
-
-//     // Respond with success
-//     return NextResponse.json(
-//       { message: 'Message sent successfully!' }, 
-//       { status: 200 }
-//     );
-//   } catch (error) {
-//     console.error('Error sending email:', error);
-    
-//     // Respond with error
-//     return NextResponse.json(
-//       { 
-//         message: 'Failed to send message', 
-//         error: error.message 
-//       }, 
-//       { status: 500 }
-//     );
-//   }
-// }
-
-
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { z } from 'zod';
@@ -102,12 +33,11 @@ export async function POST(request) {
     // Destructure validated data
     const { firstName, lastName, email, message } = validationResult.data;
 
-    // Create a Nodemailer transporter
+    // Create a Nodemailer transporter specifically for Gmail
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: Number(process.env.EMAIL_PORT),
-      secure: false, // Use TLS
+      service: 'gmail',
       auth: {
+        // Use app password, not your regular Google account password
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
       }
@@ -115,8 +45,8 @@ export async function POST(request) {
 
     // Send email
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
+      from: process.env.EMAIL_USER, // Your Gmail address
+      to: process.env.EMAIL_USER, // Recipient (same as sender in this case)
       replyTo: email, // Set reply-to to sender's email
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
       text: `
