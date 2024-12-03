@@ -111,7 +111,7 @@ export default function Hero() {
             </Button>
           </div>
 
-          <div className="flex justify-center gap-6">
+          <div className="flex justify-center gap-6 ">
             {[
               { 
                 href: "https://github.com/TechWithAkash", 
@@ -133,7 +133,7 @@ export default function Hero() {
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className={`text-muted-foreground ${color} transition-colors`}
+                  className={`text-muted-foreground ${color} transition-colors `} 
                 >
                   <Icon className="h-6 w-6" />
                 </Button>
